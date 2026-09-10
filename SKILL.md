@@ -1,6 +1,6 @@
 ---
 name: threejs-rendering
-description: 通过可运行脚手架快速创建 WebGPU 场景，或调整 Three.js 交互式 3D 查看器，加载现成模型、点选平移旋转家具、WASD 镜头移动、空间批注与评论处理、场景在线更新、处理材质与光照，并诊断低 FPS、拖动卡顿、加载停顿和 WebGL/WebGPU 渲染性能。负责室内场景、产品展示、模型缩略图、多角度预览与最终 PNG 出图；家具检索接续 find-3d-models。
+description: 为室内与产品场景检索和复用现成 3D 模型，通过可运行脚手架创建 Three.js/WebGPU 查看器，支持家具平移旋转、WASD 镜头、候选比较、空间评论、光线切换与在线更新，并诊断材质、低 FPS、拖动卡顿和加载停顿。包含模型检索经验及脚本、多角度预览和 PNG 出图。
 ---
 
 # Three.js 渲染与性能
@@ -10,6 +10,8 @@ description: 通过可运行脚手架快速创建 WebGPU 场景，或调整 Thre
 渲染统一使用 Three.js/WebGPU：模型库缩略图、多角度预览、场景验收及最终 PNG 都走本脚手架，不调用 Blender Cycles/EEVEE 出图。需要处理原生资产时，Blender 仅用于格式转换、网格及材质整理；完成后在 Three.js 中检查实际导出的 GLB。库内预览须对应可下载的模型版本，复用一个预览页顺序切换模型和机位，不为每张缩略图新开 renderer 或标签页。
 
 ## 快速创建与复用
+
+需要寻找参考图相似款或新家具时，先读 [现成模型检索](references/model-sourcing.md)。其中包含模型库选择、英文 query 改写、预览筛选与失败纠偏，以及本 skill 自带的 `scripts/blendkit.py`；无需依赖另一个 skill 或本机项目目录。已有合适资产时直接复用，不重复搜索。
 
 用户要新场景或可复用查看器时，使用本 skill 自带的 [WebGPU 脚手架](references/scaffold.md)。执行 `scripts/create_scene.py 新目录 --model 现成模型.glb`，安装锁定依赖后即可运行；布局、资产位置、灯光与机位放在生成项目的 `scene.js`，通用渲染入口无需反复重写。复用已有项目时直接改其场景配置。脚手架不含家具资产库，不用手搓家具代替用户指定的真实模型。
 
