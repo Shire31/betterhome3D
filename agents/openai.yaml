@@ -1,0 +1,3 @@
+interface:
+  display_name: "Three.js 渲染与性能"
+  short_description: "构建 Three.js 查看器，诊断低 FPS，平衡交互流畅度与成图画质"

@@ -1,0 +1,15 @@
+{
+  "name": "threejs-webgpu-scene",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "python3 server.py --port 8768",
+    "check": "node --check main.js && node --check scene.js && node --check furniture-editor.js && node --check furniture-candidates.js && node --check candidate-check.js && node --check viewer-check.js && node --check performance-check.js && node --check annotations.js && node --check annotation-check.js && node --check live-update-check.js && node --check annotation-popover-check.js && node --check lighting.js && node --check time-of-day-check.js && node lighting-test.mjs",
+    "check:annotations": "python3 server-check.py",
+    "check:server": "python3 server-check.py",
+    "publish:scene": "python3 server.py --publish scene.js"
+  },
+  "dependencies": {
+    "three": "0.185.1"
+  }
+}

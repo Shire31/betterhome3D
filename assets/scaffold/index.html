@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WebGPU 场景</title>
+  <link rel="stylesheet" href="./ui.css">
+  <script type="importmap">{"imports":{"three":"./node_modules/three/build/three.webgpu.js","three/webgpu":"./node_modules/three/build/three.webgpu.js","three/tsl":"./node_modules/three/build/three.tsl.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head>
+<body>
+  <header>
+    <nav aria-label="场景方案"></nav>
+    <div class="tools">
+      <select id="view" aria-label="相机视角"></select>
+      <select id="time-of-day" aria-label="光照时段" title="清晨、中午、傍晚、黑夜"></select>
+      <button id="edit-furniture" aria-pressed="true" disabled>编辑家具</button>
+      <button id="cutaway" aria-pressed="true">自动隐墙</button>
+      <button id="ao" aria-pressed="true">细节阴影</button>
+      <button id="gi" aria-pressed="true" title="镜头停下后补充间接光；移动时自动使用轻量预览">间接光</button>
+      <button id="export">导出 PNG</button>
+    </div>
+  </header>
+  <main id="stage"><div id="picture">
+    <div id="status" role="status" aria-live="polite">正在打开房间…</div>
+    <div id="error" hidden><strong>房间尚未就绪</strong><small>请检查模型路径与浏览器 WebGPU 支持。</small></div>
+  </div></main>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
