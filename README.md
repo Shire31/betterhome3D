@@ -1,4 +1,4 @@
-# Three.js Rendering Skill
+# BetterHome3D
 
 一个可直接安装的 Agent skill，附带独立运行的 Three.js / WebGPU 场景脚手架。用于加载现成 GLB、搭建室内或产品场景，并在同一个页面中编辑家具、处理空间评论和更新设计。
 
@@ -19,7 +19,7 @@
 需要 Git；生成场景还需要 Python 3.10+、Node.js 20+ / npm，以及支持 WebGPU 的浏览器与 GPU。Three.js 锁定为 `0.185.1`，由 `npm ci` 安装。
 
 ```sh
-git clone https://github.com/Shire31/threejs-rendering.git \
+git clone https://github.com/Shire31/betterhome3D.git \
   "${CODEX_HOME:-$HOME/.codex}/skills/threejs-rendering"
 ```
 
@@ -32,8 +32,8 @@ git clone https://github.com/Shire31/threejs-rendering.git \
 ## 不安装 skill，直接生成场景
 
 ```sh
-git clone https://github.com/Shire31/threejs-rendering.git
-cd threejs-rendering
+git clone https://github.com/Shire31/betterhome3D.git
+cd betterhome3D
 python3 scripts/create_scene.py ../my-scene \
   --model /absolute/path/to/chair.glb --editable --name '我的场景'
 cd ../my-scene
